@@ -1,8 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
- 
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
- 
+
+.container{
+  width: 35%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-title {
+  font-size: 2vw;
+  text-align: center;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.null-margin{
+  margin: 0 ;
+}
+
+.screen-medium{
+  width: 47%;
+}
+
 //ms-margin Start
 .ms-1 {
   margin-left: 0.5rem !important;
@@ -16,7 +41,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .ms-4  {
   margin-left: 2rem !important;
 }
- 
+
 //margin-end
 .me-1 {
   margin-right: .5rem !important;
@@ -30,7 +55,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .me-4  {
   margin-right: 2rem !important;
 }
- 
+
 //margin-top
 .mt-1 {
   margin-top: 0.5rem !important;
@@ -44,10 +69,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mt-4 {
   margin-top: 2rem !important;
 }
- 
+
 //
 .p-3 {
   padding: 1.5rem !important;
 }
- 
- 
+

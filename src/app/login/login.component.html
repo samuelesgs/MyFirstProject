@@ -1,13 +1,28 @@
-<mat-card appearance="outlined" class="ms-3 me-4 mt-4 p-3">
-  <mat-card-content>Simple card</mat-card-content>
- 
-  <div class="container">
- 
+<mat-card appearance="outlined" class="ms-3 me-4 mt-4 p-3 container">
+
+  <div>
+
     <div class="header-container">
- 
-      <h1 class="header">Login</h1>
- 
+
+      <h1 class="header-title">Login</h1>
+
     </div>
- 
+    <div class="body-container">
+      <div>
+        <p class = " ms-1">Email</p>
+        <mat-form-field class="example-full-width">
+          <input matInput>
+        </mat-form-field>
+        <p class="ms-1">Password</p>
+        <mat-form-field class="example-full-width">
+          <input matInput type="password">
+        </mat-form-field>
+        <div>
+          <button mat-flat-button class="screen-medium ms-1 me-1">Iniciar Sesion</button>
+          <button mat-stroked-button [routerLink]="['/register-user']" class="screen-medium ms-1">Registro</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </mat-card>
