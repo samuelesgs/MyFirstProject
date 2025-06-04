@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DashboardService } from '../services/dashboard.service';
+import { DashboardService, ListVideosResponse } from '../services/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +8,10 @@ import { DashboardService } from '../services/dashboard.service';
 })
 export class DashboardComponent {
 
+  public listVideos:ListVideosResponse[] = [];
+
   constructor(private dashboardService: DashboardService) { }
+
 
   ngOnInit(): void {
     this.getList();
@@ -17,7 +20,11 @@ export class DashboardComponent {
   public getList() {
 
     this.dashboardService.getList().then((response: any) => {
+
       console.log("La respuesta obtenida es: " + response)
+      this.listVideos = this.dashboardService.listVideos;
+      console.log("La lista de videos es: ", this.listVideos);
+
     }, (error: any) => {
       console.log("Error en la petición get: ", error);
     });
@@ -32,5 +39,7 @@ export class DashboardComponent {
       console.log("Error en la petición get: ", error);
     });
   }
+
+
 
 }

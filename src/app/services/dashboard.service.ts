@@ -7,14 +7,17 @@ import { CrudService } from './crud.service';
 
 export class DashboardService {
 
+  public listVideos:ListVideosResponse[] = [];
+
   constructor(private crudService: CrudService) { }
 
     getList() {
       const complementURL = "videos";
       return new Promise((resolve, reject) => {
         this.crudService.sendGetRequest(complementURL).subscribe({
-          next: (response: any) => {
+          next: (response: ListVideosResponse[]) => {
             console.log("la respuesta: ", response);
+            this.listVideos = response;
             resolve(response);
           },
           error: (error: any) => {
@@ -59,10 +62,11 @@ export class DashboardService {
 
 }
 
-export interface ParamCreateVideo{
-  name:string;
-  url:string;
-  fk_user:string;
-
-
+export interface ListVideosResponse {
+    id_video:    number;
+    name:        string;
+    url:         string;
+    fk_user:     number;
+    views:       number;
+    server_date: Date;
 }
