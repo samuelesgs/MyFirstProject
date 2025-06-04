@@ -21,6 +21,7 @@ import { CreateVideoComponent } from './create-video/create-video.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MiFirstDialogComponent } from './dialogs/mi-first-dialog/mi-first-dialog.component';
 import { DeleteDialogComponent } from './dialogs/delete-dialog/delete-dialog.component';
+import { HeadersDashboardComponent } from './dashboard/headers-dashboard/headers-dashboard.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { DeleteDialogComponent } from './dialogs/delete-dialog/delete-dialog.com
     DashboardComponent,
     CreateVideoComponent,
     MiFirstDialogComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
+    HeadersDashboardComponent
   ],
   imports: [
     BrowserModule,

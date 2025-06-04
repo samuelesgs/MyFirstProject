@@ -1,0 +1,8 @@
+<div class="horizontal-end mt-3 mb-3 me-3">
+  <button mat-flat-button class="me-2 " (click)="sendCrear()">Crear</button>
+  <button mat-flat-button class="me-2 " (click)="cerrarSesion()">Cerrar sesion</button>
+</div>
+<div class="ms-3">
+  <p (click)="clickName(name)">{{name}}</p>
+  <p>{{localStorage.getItem('email')}}</p>
+</div>

@@ -1,11 +1,4 @@
-<div class="horizontal-end mt-3 mb-3 me-3">
-  <button mat-flat-button class="me-2 " (click)="sendCrear()">Crear</button>
-  <button mat-flat-button class="me-2 " (click)="cerrarSesion()">Cerrar sesion</button>
-</div>
-<div>
-  <p>{{localStorage.getItem('name')}}</p>
-  <p>{{localStorage.getItem('email')}}</p>
-</div>
+<app-headers-dashboard (outputClickName)="clickName($event)" [name]="localstorage.getItem('name')!"></app-headers-dashboard>
 
 <mat-card appearance="outlined" class="ms-3 me-4 mt-3 p-3" *ngFor="let item of listVideos">
   <div class="row-video">

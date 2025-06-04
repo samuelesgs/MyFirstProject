@@ -14,11 +14,12 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent {
 
-  public localStorage = localStorage;
 
   public listVideos: ListVideosResponse[] = [];
 
   public videos: any = [];
+
+  localstorage = localStorage;
 
   constructor(
     private dashboardService: DashboardService,
@@ -99,13 +100,7 @@ export class DashboardComponent {
     });
   }
 
-  sendCrear() {
-  console.log('Navegando a /create-video');
-  this.router.navigate(['/create-video']);
-  }
-
-  cerrarSesion(){
-    localStorage.clear();
-    this.router.navigate(['/login']);
+  clickName(name : any) {
+    console.log("Fue clieado el nombre : ", name);
   }
 }
