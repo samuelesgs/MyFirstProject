@@ -3,6 +3,8 @@ import { DashboardService, ListVideosResponse } from '../services/dashboard.serv
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatDialog } from '@angular/material/dialog';
 import { MiFirstDialogComponent } from '../dialogs/mi-first-dialog/mi-first-dialog.component';
+import { DeleteDialogComponent } from '../dialogs/delete-dialog/delete-dialog.component';
+import { Dialog } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-dashboard',
@@ -57,26 +59,38 @@ export class DashboardComponent {
     return this.videos.find((row: any) => row.id == id);
   }
 
-  public deleteVideo(idDelete: string) {
-    this.dashboardService.deleteVideo(idDelete).then((response: any) => {
-      console.log("La respuesta obtenida es: " + response)
-    }, (error: any) => {
-      console.log("Error en la petición get: ", error);
-    });
-  }
-
-  openDialog(item :  ListVideosResponse) {
+  openDialog(item: ListVideosResponse) {
     const dialogRef = this.dialog.open(MiFirstDialogComponent, {
       width: '150',
-      data : item
+      data: item
     });
 
     dialogRef.afterClosed().subscribe(resultado => {
-      console.log("El resultado cliqueado fue : ",resultado);
+      console.log("El resultado cliqueado fue : ", resultado);
       if (resultado === 'confirmado') {
         console.log('El botón fue cliqueado');
         // Aquí puedes hacer cualquier acción
       }
+    });
+  }
+
+  openDialogDelete(item: ListVideosResponse) {
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      width: '150',
+      data: item
+    });
+
+    dialogRef.afterClosed().subscribe(resultado => {
+      if (resultado) this.sendDeleteVideo(item)
+    });
+  }
+
+  sendDeleteVideo(item: ListVideosResponse) {
+    this.dashboardService.deleteVideo(+item.id_video).then((response: any) => {
+      this.listVideos = this.dashboardService.listVideos;
+      console.log("La respuesta obtenida es: " + response)
+    }, (error: any) => {
+      console.log("Error en la petición get: ", error);
     });
   }
 }

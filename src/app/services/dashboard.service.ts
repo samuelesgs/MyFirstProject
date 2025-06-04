@@ -27,12 +27,13 @@ export class DashboardService {
       })
     }
 
-    deleteVideo( id:string ) {
+    deleteVideo( id:number ) {
       const complementURL = "videos/" + id;
       return new Promise((resolve, reject) => {
         this.crudService.sendDeleteRequest(complementURL).subscribe({
           next: (response: any) => {
             console.log("El video se borro correctamente");
+            this.listVideos = this.listVideos.filter(row => row.id_video != id.toString())
             resolve(response);
           },
           error: (error: any) => {
@@ -63,7 +64,7 @@ export class DashboardService {
 }
 
 export interface ListVideosResponse {
-    id_video:    number;
+    id_video:    string;
     name:        string;
     url:         string;
     fk_user:     number;

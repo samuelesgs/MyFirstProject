@@ -20,6 +20,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateVideoComponent } from './create-video/create-video.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MiFirstDialogComponent } from './dialogs/mi-first-dialog/mi-first-dialog.component';
+import { DeleteDialogComponent } from './dialogs/delete-dialog/delete-dialog.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { MiFirstDialogComponent } from './dialogs/mi-first-dialog/mi-first-dialo
     RegisterUserComponent,
     DashboardComponent,
     CreateVideoComponent,
-    MiFirstDialogComponent
+    MiFirstDialogComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,

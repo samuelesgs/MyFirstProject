@@ -1,4 +1,4 @@
-<div class="horizontal-center mt-3 mb-3 me-3">
+<div class="horizontal-end mt-3 mb-3 me-3">
   <button mat-flat-button class="me-2 ">Crear</button>
 </div>
 
@@ -9,13 +9,13 @@
       Tu navegador no soporta la reproducción de video.
     </video>
     <p class="item-name vertical-center ms-3">
-      {{item.name}} <br>
-      
+      {{item.name}}
+
     </p>
     <p class="item-view">Views : {{item.views}}</p>
   </div>
-  <div class="row-buttons horizontal-center">
+  <div class="row-buttons horizontal-end">
     <button mat-flat-button class="me-1 bg-view" (click)="openDialog(item)">Ver</button>
-    <button mat-flat-button class="bg-delete ms-1">Eliminar</button>
+    <button mat-flat-button class="bg-delete ms-1" (click)="openDialogDelete(item)">Eliminar</button>
   </div>
 </mat-card>
