@@ -28,7 +28,7 @@ export class DashboardComponent {
   public getList() {
 
     this.dashboardService.getList().then((response: any) => {
-      console.log("La respuesta obtenida es: " + response)
+      console.log("La respuesta obtenida es: ", response)
       this.listVideos = this.dashboardService.listVideos;
       this.loadVideos();
       console.log("La lista de videos es: ", this.listVideos);
@@ -40,13 +40,14 @@ export class DashboardComponent {
 
   loadVideos() {
     for (const row of this.listVideos) {
-      console.log("http://localhost:3000/" + row.url);
+
+      console.log("http://localhost:3000/videos/" + row.url.replace("uploads\\videos\\", ""));
     }
     ///file-1749058924280-56030156.mp4
     this.videos = this.listVideos.map(video => ({
       id: video.id_video,
       safeUrl: this.sanitizer.bypassSecurityTrustResourceUrl(
-        `http://localhost:3000/videos/${video.url.replace("uploads/videos/", "")}`
+        `http://localhost:3000/videos/${video.url.replace("uploads/videos/", "").replace("uploads\\videos\\", "")}`
       )
     }));
 
