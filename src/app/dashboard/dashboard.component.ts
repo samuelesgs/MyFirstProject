@@ -55,7 +55,7 @@ export class DashboardComponent {
 
   }
 
-  getVideo(id: number) {
+  getVideo(id: string) {
     return this.videos.find((row: any) => row.id == id);
   }
 
