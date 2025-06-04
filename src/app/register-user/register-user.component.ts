@@ -24,7 +24,7 @@ export class RegisterUserComponent {
     this.usersService.registerUser(params).then((response:any) => {
       console.log("El registro fue exitoso! Tu correo es: " + response)
     }, (error:any) => {
-      console.log(error);
+      console.log("Error en la petición: ",error);
     });
 
 
