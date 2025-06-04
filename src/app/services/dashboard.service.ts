@@ -48,7 +48,6 @@ export class DashboardService {
       return new Promise((resolve, reject) => {
         this.crudService.sendPostRequest(complementURL, params).subscribe({
           next: (response: any) => {
-            console.log("El video se borro correctamente");
             resolve(response);
           },
           error: (error: any) => {

@@ -14,6 +14,8 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent {
 
+  public localStorage = localStorage;
+
   public listVideos: ListVideosResponse[] = [];
 
   public videos: any = [];
@@ -100,5 +102,10 @@ export class DashboardComponent {
   sendCrear() {
   console.log('Navegando a /create-video');
   this.router.navigate(['/create-video']);
+  }
+
+  cerrarSesion(){
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 }
