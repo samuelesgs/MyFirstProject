@@ -75,3 +75,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding: 1.5rem !important;
 }
 
+.center {
+  display: flex;
+  justify-content: center;  /* centra horizontal */
+  align-items: center;      /* centra vertical */
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;      /* centra vertical */
+}
+
+.horizontal-center {
+  display: flex;
+  justify-content: end;  /* centra horizontal */
+
+}

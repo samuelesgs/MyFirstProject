@@ -9,7 +9,7 @@ export class DashboardService {
 
   public listVideos:ListVideosResponse[] = [];
 
-  constructor(private crudService: CrudService) { }
+  constructor(private crudService: CrudService ) { }
 
     getList() {
       const complementURL = "videos";

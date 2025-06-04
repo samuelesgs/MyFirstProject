@@ -1,4 +1,21 @@
-<mat-card appearance="outlined" class="ms-3 me-4 mt-1 p-3" *ngFor="let item of listVideos">
-  <p>{{item.name}}</p>
+<div class="horizontal-center mt-3 mb-3 me-3">
+  <button mat-flat-button class="me-2 ">Crear</button>
+</div>
 
+<mat-card appearance="outlined" class="ms-3 me-4 mt-3 p-3" *ngFor="let item of listVideos">
+  <div class="row-video">
+    <video width="20%" height="auto" controls>
+      <source [src]="getVideo(item.id_video).safeUrl" type="video/mp4" />
+      Tu navegador no soporta la reproducción de video.
+    </video>
+    <p class="item-name vertical-center ms-3">
+      {{item.name}} <br>
+      
+    </p>
+    <p class="item-view">Views : {{item.views}}</p>
+  </div>
+  <div class="row-buttons horizontal-center">
+    <button mat-flat-button class="me-1 bg-view" (click)="openDialog(item)">Ver</button>
+    <button mat-flat-button class="bg-delete ms-1">Eliminar</button>
+  </div>
 </mat-card>

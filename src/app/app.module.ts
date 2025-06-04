@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
-import {MatSelectModule} from '@angular/material/select';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatCardModule} from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateVideoComponent } from './create-video/create-video.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MiFirstDialogComponent } from './dialogs/mi-first-dialog/mi-first-dialog.component';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { CreateVideoComponent } from './create-video/create-video.component';
     LoginComponent,
     RegisterUserComponent,
     DashboardComponent,
-    CreateVideoComponent
+    CreateVideoComponent,
+    MiFirstDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { CreateVideoComponent } from './create-video/create-video.component';
     MatCardModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatDialogModule,
     HttpClientModule
   ],
   providers: [],

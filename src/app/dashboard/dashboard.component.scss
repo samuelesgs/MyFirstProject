@@ -1,0 +1,31 @@
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.row-video {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100% !important;
+}
+
+.item-name {
+    margin-right: 1rem;
+    /* ocupa todo el espacio posible */
+    font-size: 25px;
+    width: 70% !important;
+}
+
+.item-view {
+    width: 30% !important;
+    text-align: end;
+    font-size: 20px;
+}
+
+.bg-delete {
+    background-color: rgb(210, 29, 29) !important;
+}
+
+.bg-view {
+    background-color: #4387ca !important;
+}
