@@ -14,10 +14,8 @@
           <input matInput [(ngModel)]="name">
         </mat-form-field>
         <p class="ms-1">Subir video</p>
-        <mat-form-field class="example-full-width">
-          <input matInput [(ngModel)]="selectedFile" type="file">
-        </mat-form-field>
-        <div>
+          <input [(ngModel)]="selectedFile" type="file">
+        <div class="mt-3">
           <button mat-flat-button class="screen-medium ms-1 me-1" (click)="sendCreateVideo()" >Crear video</button>
           <button mat-stroked-button [routerLink]="['/register-user']" class="screen-medium ms-1">Cancelar</button>
         </div>

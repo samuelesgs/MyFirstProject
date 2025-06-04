@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MiFirstDialogComponent } from '../dialogs/mi-first-dialog/mi-first-dialog.component';
 import { DeleteDialogComponent } from '../dialogs/delete-dialog/delete-dialog.component';
 import { Dialog } from '@angular/cdk/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,7 +21,9 @@ export class DashboardComponent {
   constructor(
     private dashboardService: DashboardService,
     private sanitizer: DomSanitizer,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog,
+    private router: Router
+  ) { }
 
 
   ngOnInit(): void {
@@ -92,5 +95,10 @@ export class DashboardComponent {
     }, (error: any) => {
       console.log("Error en la petición get: ", error);
     });
+  }
+
+  sendCrear() {
+  console.log('Navegando a /create-video');
+  this.router.navigate(['/create-video']);
   }
 }
