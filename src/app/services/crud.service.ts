@@ -32,4 +32,8 @@ export class CrudService {
     public sendGetRequest(complementUrl : string) {
       return this.http.get<any>(this.BASE_URL+"/"+complementUrl);
     }
+
+    public sendDeleteRequest(complementUrl : string) {
+      return this.http.delete<any>(this.BASE_URL+"/"+complementUrl);
+    }
 }

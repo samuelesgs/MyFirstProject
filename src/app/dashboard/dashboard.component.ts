@@ -25,4 +25,12 @@ export class DashboardComponent {
 
   }
 
+  public deleteVideo( idDelete:string) {
+    this.dashboardService.deleteVideo(idDelete).then((response: any) => {
+      console.log("La respuesta obtenida es: " + response)
+    }, (error: any) => {
+      console.log("Error en la petición get: ", error);
+    });
+  }
+
 }

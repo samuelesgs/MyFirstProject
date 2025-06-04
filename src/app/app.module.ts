@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateVideoComponent } from './create-video/create-video.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     LoginComponent,
     RegisterUserComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateVideoComponent
   ],
   imports: [
     BrowserModule,
