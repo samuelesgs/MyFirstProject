@@ -1,1 +1,28 @@
-<p>create-video works!</p>
+<mat-card appearance="outlined" class="ms-3 me-4 mt-4 p-3 container">
+
+  <div>
+
+    <div class="header-container">
+
+      <h1 class="header-title">Crear video</h1>
+
+    </div>
+    <div class="body-container">
+      <div>
+        <p class = " ms-1">Titulo</p>
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="name">
+        </mat-form-field>
+        <p class="ms-1">Subir video</p>
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="selectedFile" type="file">
+        </mat-form-field>
+        <div>
+          <button mat-flat-button class="screen-medium ms-1 me-1" (click)="sendCreateVideo()" >Crear video</button>
+          <button mat-stroked-button [routerLink]="['/register-user']" class="screen-medium ms-1">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</mat-card>
